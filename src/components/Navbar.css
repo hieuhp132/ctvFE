@@ -1,0 +1,189 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #FFA500, #FF5E62);
+  color: white;
+}
+
+/* keep content centered within a max width on small screens */
+.navbar {
+  gap: 12px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbar-right nav button,
+.navbar-right nav a {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.navbar-right nav a:hover {
+  opacity: 0.8;
+}
+
+/* Profile box */
+.profile-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Search */
+.search { display: flex; align-items: center; }
+.search-icon { cursor: pointer; font-size: 18px; }
+.search-box { display: flex; align-items: center; gap: 6px; }
+.search-input {
+  height: 28px;
+  width: 220px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 0 8px;
+}
+.search-close {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 2px;
+  height: 28px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+/* Notification bell */
+.notif {
+  position: relative;
+  cursor: pointer;
+}
+.notif .bell {
+  font-size: 18px;
+}
+.notif .dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+.notif .dot.gray {
+  background: #9ca3af;
+}
+.notif-menu {
+  position: absolute;
+  right: 0;
+  top: 44px;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  width: 300px;
+  z-index: 1000;
+  padding: 8px 0;
+}
+.notif-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; }
+.notif-item:hover { background: #f7f7f7; }
+.notif-time { color: #666; font-size: 12px; margin-left: auto; }
+
+/* Credit/Bonus pill */
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  font-size: 0.85rem;
+}
+
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.profile-box:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-1px); }
+
+.avatar { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.5); }
+.username { font-weight: 500; }
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 44px;
+  background: #fff;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 8px 0;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.dropdown-divider {
+  height: 3px; /* thicker for visibility */
+  background: linear-gradient(135deg, #FFA500, #FF5E62);
+  opacity: 0.35;
+  margin: 6px 0;
+}
+
+.dropdown-menu li {
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+  border-left: 3px solid transparent;
+}
+
+/* Hover uses the same gradient tone */
+.dropdown-menu li:hover {
+  background: linear-gradient(135deg, rgba(255,165,0,0.12), rgba(255,94,98,0.12));
+}
+
+/* Active item with gradient frame similar to header */
+.dropdown-menu li.active {
+  background: linear-gradient(135deg, rgba(255,165,0,0.18), rgba(255,94,98,0.18));
+  border-left: 3px solid #FF5E62;
+  box-shadow: inset 0 0 0 1px rgba(255,165,0,0.45), inset 0 0 0 2px rgba(255,94,98,0.35);
+}
+
+@media (max-width: 480px) { .navbar { max-width: 420px; margin: 0 auto; } }
+
+@media (max-width: 480px) {
+  .search-input { width: 140px; }
+  .stat-pill { display: none; }
+}
